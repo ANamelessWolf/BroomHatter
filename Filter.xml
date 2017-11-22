@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<filter>
+  <path_contains>
+    <!--Applies on files and directories-->
+    <entry value="bin\Debug"/>
+    <entry value="bin\Release"/>
+    <entry value="obj"/>
+  </path_contains>
+  <extension_is>
+    <!--Only applies on files-->
+    <entry value="pdb"/>
+  </extension_is>
+  <reg_exp_match>
+    <!--Only applies on files-->
+    <!--<entry value="^.*\.(jpg|JPG|gif|GIF|doc|DOC|pdf|PDF)$"/>-->
+  </reg_exp_match>
+</filter>
