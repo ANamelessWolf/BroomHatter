@@ -70,7 +70,10 @@ namespace Nameless.Apps.Broom
         /// <returns>True if the directory is inside an unwanted path</returns>
         public override bool IsDirectoryValid(DirectoryInfo directory)
         {
-            return this.UnWantedPaths.Count(x => directory.FullName.ToUpper().Contains(x)) > 0;
+            if (directory.FullName.Contains(".git"))
+                return false;
+            else
+                return this.UnWantedPaths.Count(x => directory.FullName.ToUpper().Contains(x)) > 0;
         }
         /// <summary>
         /// Check if the file is inside of an Unwanted path

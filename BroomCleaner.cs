@@ -37,7 +37,12 @@ namespace Nameless.Apps.Broom
         /// </summary>
         static String LogPath
         {
-            get { return Path.Combine(CurrentPath, "cleaning.log"); }
+            get
+            {
+                string path = System.Reflection.Assembly.GetAssembly(typeof(SolutionFilter)).Location;
+                path = Path.GetDirectoryName(path);
+                return Path.Combine(path, "cleaning.log");
+            }
         }
         /// <summary>
         /// Ryoga Hibiki Developer
